@@ -1,13 +1,105 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body-gray {
+  background-color: #efefef;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.sidebar-nav-bar {
+  @apply bg-white max-w-fit px-0 flex flex-col justify-center items-center relative z-10;
+}
+
+.sidebar-active {
+  background-color: #f7f7f7;
+  min-width: 490px;
+  @apply absolute top-0 min-h-full shadow-sm left-26 px-6 py-4 transition-all duration-500 z-0;
+}
+
+.sidebar-close-tag {
+  @apply absolute rotate-90 cursor-pointer transition-all duration-500 top-1/2 right-minus-3-5;
+}
+
+.active-option-background {
+  @apply absolute top-0 left-0 right-0 transition-all ease-in duration-300 z-20;
+}
+
+.sidebar-active.disabled {
+  transform: translateX(-100rem);
+  opacity: 0;
+}
+
+.active-option-background.disabled {
+  opacity: 0;
+}
+
+.sidebar-close-tag.disabled {
+  transform: translateX(-100rem) rotate(90deg);
+  opacity: 0;
+}
+
+.btn {
+  @apply py-2 px-4 rounded-lg;
+}
+
+.card {
+  @apply rounded overflow-hidden shadow-lg;
+}
+
+.dropdown-option {
+  @apply block px-4 py-2 text-sm text-gray-500 rounded-lg cursor-pointer;
+}
+
+.dropdown-option:hover {
+  @apply bg-gray-50 text-gray-700;
+}
+
+.dropdown-selected {
+  @apply px-4 py-2 text-sm text-gray-600 cursor-pointer;
+}
+
+.dropdown-selected:hover {
+  @apply text-gray-700 bg-gray-50 rounded-l-md;
+}
+
+.sidebar-option {
+  @apply w-full py-2 px-4 flex flex-col items-center cursor-pointer z-30;
+}
+
+.sidebar-option:hover {
+  background-color: #f7f7f7;
+  @apply text-gray-700 rounded-l-md;
+}
+
+.sidebar-active-nav {
+  @apply absolute left-0 top-0;
+  transition: 0.5s;
+}
+
+.left-26 {
+  left: 6.5rem;
+}
+
+.right-minus-3-5 {
+  right: -3.5rem;
+}
+
+.rotate-270 {
+  transform: rotate(270deg);
+}
+
+.bg-white-f3 {
+  background-color: #f3f3f3;
+}
+
+.min-h-1 {
+  min-height: 10px;
+}
+
+.right-34 {
+  right: 8.5rem;
+}
+
+.btn-white {
+  @apply bg-white rounded-md text-gray-600 px-6 py-3 cursor-pointer;
 }
